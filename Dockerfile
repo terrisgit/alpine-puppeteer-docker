@@ -4,13 +4,13 @@
 # --init --shm-size=1gb
 #
 # Dockerfile arguments:
-# GROUPID - Defaults to 1000
 # USERID - Defaults to 1000
+# GROUPID - Defaults to USERID
 
 FROM alpine
 
-ARG GROUPID=1000
 ARG USERID=1000
+ARG GROUPID=$USERID
 
 RUN apk add --no-cache \
   chromium \
@@ -33,8 +33,8 @@ WORKDIR /app
 COPY . /app
 
 # Add user and group to avoid needing --no-sandbox
-ENV GROUPID=$GROUPID
 ENV USERID=$USERID
+ENV GROUPID=$GROUPID
 
 RUN addgroup -g $GROUPID -S appuser \
   && adduser -u $USERID -S -G appuser appuser \
