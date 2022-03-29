@@ -8,3 +8,4 @@
 # Docker volumes.
 
 docker build --build-arg USERID=$UID --build-arg GROUPID=$GROUPS -t terrisgit-alpine-puppeteer -f Dockerfile .
+
