@@ -13,13 +13,8 @@ Use Puppeteer in a Docker container using Alpine Linux with a ~/.aws directory
 
 ## Building the Image
 
-1. Set the GROUPID and USERID environment variables .. eg:
-```
-export GROUPID=$GID
-export USERID=$UID
-```
-2. Modify build.sh per your needs
-3. `build.sh`
+1. Modify build.sh per your needs
+2. `build.sh`
 
 ## Running a Shell in the Container
 
