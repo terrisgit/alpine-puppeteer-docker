@@ -1,6 +1,10 @@
 #! /bin/sh
 
-mkdir .aws
-cp ~/.aws/* .aws
+# Optionally add AWS credentials
+# mkdir .aws ; cp ~/.aws/* .aws
 
-docker build --build-arg UID=$UID --build-arg GID=$GROUPS -t terrisgit-alpine-puppeteer -f Dockerfile .
+# This is just an example. If you are will probably need to specify a particular
+# group id at a minimum. These settings are especially important if you are using
+# Docker volumes.
+
+docker build --build-arg USERID=$UID --build-arg GROUPID=$GROUPS -t terrisgit-alpine-puppeteer -f Dockerfile .
