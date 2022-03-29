@@ -7,10 +7,15 @@ Use Puppeteer in a Docker container using Alpine Linux with a ~/.aws directory
 
 ## Dockerfile Arguments
 
-- GID - Defaults to 1000
-- UID - Defaults to 1000
+- GROUPID - Defaults to 1000
+- USERID - Defaults to 1000
 
-## How to Use
+## Building the Image
 
-- Modify build.sh per your needs and run it
-- 
+Modify build.sh per your needs and run it
+
+## Running a Shell in the Container
+
+`docker run --init --shm-size=1gb -it terrisgit-alpine-puppeteer ash`
+
+In the shell, try running 'chromium-browser'
