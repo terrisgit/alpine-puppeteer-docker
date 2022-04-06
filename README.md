@@ -4,7 +4,7 @@ Use Puppeteer in a Docker container using Alpine Linux with a ~/.aws directory
 ## Requirements
 
 - Docker version 20 or later
-- This does not work on MacOS with Apple processors! Even with `--platform=linux/amd64,` Chromium crashes upon starting with an error about ptrace
+- This does not work on MacOS with Apple M1 processors! Even with `--platform=linux/amd64,` Chromium crashes upon starting with an error about ptrace. Try this with `export DOCKER_DEFAULT_PLATFORM=linux/amd64` - maybe it will work for you.
 
 ## Dockerfile Arguments
 
