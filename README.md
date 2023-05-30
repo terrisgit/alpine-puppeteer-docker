@@ -4,7 +4,6 @@ Use Puppeteer in a Docker container using Alpine Linux with a ~/.aws directory
 ## Requirements
 
 - Docker version 20 or later
-- This does not work on MacOS with Apple M1 processors! Even with `--platform=linux/amd64,` Chromium crashes upon starting with an error about ptrace. Try this with `export DOCKER_DEFAULT_PLATFORM=linux/amd64` - maybe it will work for you.
 
 ## Dockerfile Arguments
 
@@ -18,16 +17,6 @@ Use Puppeteer in a Docker container using Alpine Linux with a ~/.aws directory
 
 ## Running a Shell in the Container
 
-`docker run --init --shm-size=1gb -it terrisgit-alpine-puppeteer ash`
+`docker run -it terrisgit-alpine-puppeteer ash`
 
-In the shell, run 'chromium-browser'. You should see the following output:
-
-```
-Failed to move to new namespace: PID namespaces supported, Network namespace supported, but failed: errno = Operation not permitted
-[0329/165712.750711:WARNING:process_reader_linux.cc(76)] sched_getscheduler: Function not implemented (38)
-[0329/165712.750858:WARNING:process_reader_linux.cc(76)] sched_getscheduler: Function not implemented (38)
-[0329/165712.751098:ERROR:file_io_posix.cc(144)] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq: No such file or directory (2)
-[0329/165712.751154:ERROR:file_io_posix.cc(144)] open /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq: No such file or directory (2)
-Trace/breakpoint trap
-/app $ [17:17:0100/000000.782930:ERROR:zygote_linux.cc(646)] write: Broken pipe (32)
-```
+In the shell, run 'chromium-browser --version'.
