@@ -1,15 +1,10 @@
-# puppeteer-alpine-docker-aws
+# puppeteer-alpine-docker
 
-Use Puppeteer in a Docker container using Alpine Linux with a ~/.aws directory
+Use Puppeteer in a Docker container.
 
 ## Requirements
 
 - Docker version 20 or later
-
-## Building the Image
-
-1. Modify build.sh per your needs
-2. `build.sh`
 
 ## Running a Shell in the Container
 
