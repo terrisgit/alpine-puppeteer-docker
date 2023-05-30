@@ -6,8 +6,6 @@ Use Puppeteer in a Docker container.
 
 - Docker version 20 or later
 
-## Running a Shell in the Container
+## Retrieving the version of Chromium
 
-`docker run -it terrisgit-alpine-puppeteer ash`
-
-In the shell, run 'chromium-browser --version'.
+`docker run -it container_id chromium-browser --version`
