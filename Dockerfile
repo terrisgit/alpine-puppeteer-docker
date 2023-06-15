@@ -2,6 +2,7 @@
 # Dockerfile for running Puppeteer under Alpine.
 #
 # 🐋 Dockerfiles 🐋
+# This Dockerfile: https://gist.github.com/terrisgit/f4f6bc324864ef77a5cd1461ad5e72d3
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
 # https://github.com/MontFerret/chromium 
 # https://github.com/Yelp/dumb-init
@@ -90,7 +91,7 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 
 RUN apk add --no-cache \
   ca-certificates \
-  chromium@edge=113.0.5672.92-r0 \
+  chromium@edge=113.0.5672.126-r2 \
   dumb-init \
   chromium \
   harfbuzz \
@@ -102,7 +103,9 @@ RUN apk add --no-cache \
   freetype-dev \
   msttcorefonts-installer \
   nss \
-  ttf-freefont
+  ttf-freefont \
+  unzip
+# If you don't need unzip, remove it, but it's probably there by default anyway
 
 # microsoft-true-font
 RUN update-ms-fonts
@@ -127,7 +130,7 @@ COPY --chown=node:node . .
 RUN rm -rf node_modules
 
 # Populate node_modules
-RUN npm install --omit=dev
+RUN npm ci --omit=dev
 
 # Clean up
 RUN rm -rf /tmp/*
