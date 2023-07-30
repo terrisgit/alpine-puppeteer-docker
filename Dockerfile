@@ -19,9 +19,8 @@
 # https://pkgs.alpinelinux.org/packages?name=chromium&branch=edge&repo=&arch=x86_64
 #
 # ️🅰️ ️Web Fonts 🅰️
-# Recommended for pixel perfect PDFs
-# https://axellarsson.com/blog/google-fonts-docker-container/
-# https://copyprogramming.com/howto/in-a-node-alpine-environment-performing-a-pdf-conversion-using-libreoffice-breaks-all-but-special-characters-and-numbers 
+# Recommended for pixel-perfect PDFs
+# https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
 # https://github.com/alpaca-tc/puppeteer-pdf-generator/blob/master/Dockerfile
 #
 # 🚥 Recommended Chromium Switches 🚥
@@ -66,9 +65,10 @@
 # --use-fake-ui-for-media-stream
 # --use-gl=swiftshader
 # --use-mock-keychain
-################################################################################
 
-FROM node:20-alpine
+# FROM node:20-alpine
+ARG REPO=125900505984.dkr.ecr.us-west-2.amazonaws.com/ecr_dev_nora-site-archival:20-alpine
+FROM $REPO
 
 ################################################################################
 # Environment variables
@@ -91,7 +91,7 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 
 RUN apk add --no-cache \
   ca-certificates \
-  chromium@edge=113.0.5672.126-r2 \
+  chromium@edge=115.0.5790.110-r0 \
   dumb-init \
   chromium \
   harfbuzz \
@@ -101,9 +101,11 @@ RUN apk add --no-cache \
   font-noto-emoji \
   freetype \
   freetype-dev \
+  gtk+3.0 \
   msttcorefonts-installer \
   nss \
   ttf-freefont \
+  ttf-opensans \
   unzip
 # If you don't need unzip, remove it, but it's probably there by default anyway
 
@@ -119,14 +121,14 @@ RUN mkdir -p /tmp/google-fonts \
   && find $PWD/fonts-main/ -name "*.ttf" -exec install -m644 {} $FONT_DIR/truetype/google-fonts/ \; || return 1
 
 # Reload fonts
-RUN fc-cache -f && rm -rf /var/cache/*
+RUN fc-cache -f 
 
 # Copy files to the container except those specified in .dockerignore
 WORKDIR /app
 RUN chown node:node /app
 COPY --chown=node:node . .
 
-# .dockerignore seems to be ignored (INCLUDE+ issue?)
+# .dockerignore seems to be ignored
 RUN rm -rf node_modules
 
 # Populate node_modules
@@ -135,5 +137,5 @@ RUN npm ci --omit=dev
 # Clean up
 RUN rm -rf /tmp/*
 
-USER node:node
+USER node
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
