@@ -38,6 +38,7 @@
 # --disable-extensions
 # --disable-features=AudioServiceOutOfProcess
 # --disable-features=IsolateOrigins
+# --disable-gpu
 # --disable-hang-monitor
 # --disable-infobars
 # --disable-ipc-flooding-protection
@@ -49,6 +50,7 @@
 # --disable-renderer-backgrounding
 # --disable-setuid-sandbox
 # --disable-site-isolation-trials
+# --disable-software-rasterizer
 # --disable-speech-api
 # --disable-sync
 # --hide-scrollbars
@@ -66,8 +68,7 @@
 # --use-gl=swiftshader
 # --use-mock-keychain
 
-# FROM node:20-alpine
-ARG REPO=125900505984.dkr.ecr.us-west-2.amazonaws.com/ecr_dev_nora-site-archival:20-alpine
+ARG REPO=node:20-alpine
 FROM $REPO
 
 ################################################################################
