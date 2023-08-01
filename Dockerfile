@@ -2,12 +2,13 @@
 # Dockerfile for running Puppeteer under Alpine.
 #
 # 🐋 Dockerfiles 🐋
-# This Dockerfile: https://gist.github.com/terrisgit/f4f6bc324864ef77a5cd1461ad5e72d3
+# This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker/blob/main/Dockerfile
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
 # https://github.com/MontFerret/chromium 
 # https://github.com/Yelp/dumb-init
 # https://github.com/tkp1n/chromium-ci/blob/master/Dockerfile
 # https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile
+# https://simpleit.rocks/linux/ubuntu/fixing-common-google-chrome-gpu-process-error-message-in-linux
 #
 # 🦄 Puppeteer 🦄
 # https://apitemplate.io/blog/tips-for-generating-pdfs-with-puppeteer/
@@ -19,7 +20,8 @@
 # https://pkgs.alpinelinux.org/packages?name=chromium&branch=edge&repo=&arch=x86_64
 #
 # ️🅰️ ️Web Fonts 🅰️
-# Recommended for pixel-perfect PDFs
+# The fonts installed by this Dockerfile are probably redundant.
+# Recommended for pixel-perfect PDFs:
 # https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
 # https://github.com/alpaca-tc/puppeteer-pdf-generator/blob/master/Dockerfile
 #
@@ -106,7 +108,6 @@ RUN apk add --no-cache \
   msttcorefonts-installer \
   nss \
   ttf-freefont \
-  ttf-opensans \
   unzip
 # If you don't need unzip, remove it, but it's probably there by default anyway
 
