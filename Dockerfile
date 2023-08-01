@@ -8,7 +8,6 @@
 # https://github.com/Yelp/dumb-init
 # https://github.com/tkp1n/chromium-ci/blob/master/Dockerfile
 # https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile
-# https://simpleit.rocks/linux/ubuntu/fixing-common-google-chrome-gpu-process-error-message-in-linux
 #
 # 🦄 Puppeteer 🦄
 # https://apitemplate.io/blog/tips-for-generating-pdfs-with-puppeteer/
@@ -27,6 +26,7 @@
 #
 # 🚥 Recommended Chromium Switches 🚥
 # https://peter.sh/experiments/chromium-command-line-switches
+# https://simpleit.rocks/linux/ubuntu/fixing-common-google-chrome-gpu-process-error-message-in-linux
 # --autoplay-policy=user-gesture-required
 # --disable-background-networking
 # --disable-background-timer-throttling
