@@ -91,6 +91,9 @@ ENV CHROME_PATH=/usr/lib/chromium/
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 #
+# Puppeteer debugging
+# ENV DEBUG=puppeteer:*
+#
 ################################################################################
 
 RUN apk update
