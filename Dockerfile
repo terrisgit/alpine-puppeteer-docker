@@ -3,9 +3,9 @@
 #
 # 🐋 Dockerfiles 🐋
 # This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker/blob/main/Dockerfile
+# https://github.com/Yelp/dumb-init
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
 # https://github.com/MontFerret/chromium 
-# https://github.com/Yelp/dumb-init
 # https://github.com/tkp1n/chromium-ci/blob/master/Dockerfile
 # https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile
 #
@@ -19,8 +19,8 @@
 # https://pkgs.alpinelinux.org/packages?name=chromium&branch=edge&repo=&arch=x86_64
 #
 # ️🅰️ ️Web Fonts 🅰️
-# The fonts installed by this Dockerfile are probably redundant.
-# Recommended for pixel-perfect PDFs:
+# Recommended for pixel-perfect PDFs. However, the fonts installed herein may be
+# redundant and some might be missing. Be skeptical.
 # https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
 # https://github.com/alpaca-tc/puppeteer-pdf-generator/blob/master/Dockerfile
 #
@@ -69,12 +69,18 @@
 # --use-fake-ui-for-media-stream
 # --use-gl=swiftshader
 # --use-mock-keychain
+#
+# End of commentary
+################################################################################
 
 ARG REPO=node:20-alpine
 FROM $REPO
 
+ARG CHROMIUM=chromium@edge=115.0.5790.110-r2
+
 ################################################################################
 # Environment variables
+#
 ENV FONT_DIR=/usr/share/fonts
 #
 # Tell Puppeteer to not install Chrome. It's installed via APK.
@@ -84,6 +90,7 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 ENV CHROME_PATH=/usr/lib/chromium/
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+#
 ################################################################################
 
 RUN apk update
@@ -94,7 +101,7 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 
 RUN apk add --no-cache \
   ca-certificates \
-  chromium@edge=115.0.5790.110-r0 \
+  $CHROMIUM \
   dumb-init \
   chromium \
   harfbuzz \
