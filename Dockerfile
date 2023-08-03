@@ -1,5 +1,6 @@
 ################################################################################
-# Dockerfile for running Puppeteer under Alpine.
+# This Dockerfile is for running Puppeteer under Alpine primarily for generating
+# PDF screenshots.
 #
 # 🐋 Dockerfiles 🐋
 # This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker/blob/main/Dockerfile
