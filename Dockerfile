@@ -45,7 +45,6 @@
 # --disable-infobars
 # --disable-ipc-flooding-protection
 # --disable-notifications
-# --disable-offer-store-unmasked-wallet-cards
 # --disable-popup-blocking
 # --disable-print-preview
 # --disable-prompt-on-repost
@@ -85,6 +84,7 @@
 # --disable-gl-extensions
 # --disable-histogram-customizer 
 # --disable-in-process-stack-traces
+# --disable-offer-store-unmasked-wallet-cards
 # --disable-threaded-animation 
 # --disable-threaded-scrolling
 # --disable-webgl
