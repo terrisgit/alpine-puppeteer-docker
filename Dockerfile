@@ -72,32 +72,33 @@
 # --use-gl=swiftshader
 # --use-mock-keychain
 #
-# Other Chromium Arguments to consider:
-#
-# --enable-features=NetworkService,NetworkServiceInProcess 
-# --enable-automation
-# --enable-blink-features=IdleDetection 
-# --log-level=3 
-# --no-experiments 
-# --ignore-certificate-errors 
-# --ignore-certificate-errors-spki-list
-# --disable-component-extensions-with-background-pages
-# --disable-features=TranslateUI 
-# --disable-webgl
-# --disable-threaded-animation 
-# --disable-threaded-scrolling
-# --disable-in-process-stack-traces
-# --disable-histogram-customizer 
-# --disable-gl-extensions
-# --disable-composited-antialiasing
-# --disable-canvas-aa 
+# 🚥 More Chromium Arguments to Consider 🚥
 # --disable-3d-apis
 # --disable-accelerated-2d-canvas 
 # --disable-accelerated-jpeg-decoding 
 # --disable-accelerated-mjpeg-decode 
+# --disable-accelerated-video-decode
 # --disable-app-list-dismiss-on-blur 
-# --disable-accelerated-video-decode 
+# --disable-canvas-aa 
+# --disable-component-extensions-with-background-pages
+# --disable-composited-antialiasing
+# --disable-features=TranslateUI 
+# --disable-gl-extensions
+# --disable-histogram-customizer 
+# --disable-in-process-stack-traces
+# --disable-threaded-animation 
+# --disable-threaded-scrolling
+# --disable-webgl
+# --enable-automation
+# --enable-blink-features=IdleDetection 
+# --enable-features=NetworkService,NetworkServiceInProcess 
+# --ignore-certificate-errors 
+# --ignore-certificate-errors-spki-list
+# --log-level=3 
+# --no-experiments 
 # --remote-debugging-port=0 
+# --renderer-process-limit=2 (to reduce memory usage which might reduce page
+#   crashes)
 #
 # End of commentary
 ################################################################################
