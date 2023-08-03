@@ -66,7 +66,6 @@
 # --no-sandbox
 # --no-zygote
 # --password-store=basic
-# --single-process on AWS Fargate or Lambda - See https://github.com/puppeteer/puppeteer/issues/6776
 # --use-fake-device-for-media-stream
 # --use-fake-ui-for-media-stream
 # --use-gl=swiftshader
@@ -99,6 +98,7 @@
 # --remote-debugging-port=0 
 # --renderer-process-limit=2 (to reduce memory usage which might reduce page
 #   crashes)
+# --single-process on AWS Fargate or Lambda - See https://github.com/puppeteer/puppeteer/issues/6776
 #
 # End of commentary
 ################################################################################
