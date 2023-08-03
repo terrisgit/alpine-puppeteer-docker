@@ -55,6 +55,7 @@
 # --disable-software-rasterizer
 # --disable-speech-api
 # --disable-sync
+# --disable-translate
 # --hide-scrollbars
 # --ignore-gpu-blacklist
 # --metrics-recording-only
@@ -93,6 +94,7 @@ ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 #
 # Puppeteer debugging
 # ENV DEBUG=puppeteer:*
+# ENV DEBUG_COLORS=true
 #
 ################################################################################
 
