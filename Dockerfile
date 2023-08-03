@@ -24,7 +24,7 @@
 # https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
 # https://github.com/alpaca-tc/puppeteer-pdf-generator/blob/master/Dockerfile
 #
-# 🚥 Recommended Chromium Switches 🚥
+# 🚥 Recommended Chromium Arguments 🚥
 # https://peter.sh/experiments/chromium-command-line-switches
 # https://simpleit.rocks/linux/ubuntu/fixing-common-google-chrome-gpu-process-error-message-in-linux
 # --autoplay-policy=user-gesture-required
@@ -66,10 +66,38 @@
 # --no-sandbox
 # --no-zygote
 # --password-store=basic
+# --single-process on AWS Fargate or Lambda - See https://github.com/puppeteer/puppeteer/issues/6776
 # --use-fake-device-for-media-stream
 # --use-fake-ui-for-media-stream
 # --use-gl=swiftshader
 # --use-mock-keychain
+#
+# Other Chromium Arguments to consider:
+#
+# --enable-features=NetworkService,NetworkServiceInProcess 
+# --enable-automation
+# --enable-blink-features=IdleDetection 
+# --log-level=3 
+# --no-experiments 
+# --ignore-certificate-errors 
+# --ignore-certificate-errors-spki-list
+# --disable-component-extensions-with-background-pages
+# --disable-features=TranslateUI 
+# --disable-webgl
+# --disable-threaded-animation 
+# --disable-threaded-scrolling
+# --disable-in-process-stack-traces
+# --disable-histogram-customizer 
+# --disable-gl-extensions
+# --disable-composited-antialiasing
+# --disable-canvas-aa 
+# --disable-3d-apis
+# --disable-accelerated-2d-canvas 
+# --disable-accelerated-jpeg-decoding 
+# --disable-accelerated-mjpeg-decode 
+# --disable-app-list-dismiss-on-blur 
+# --disable-accelerated-video-decode 
+# --remote-debugging-port=0 
 #
 # End of commentary
 ################################################################################
