@@ -1,11 +1,10 @@
 # puppeteer-alpine-docker
 
-Use Puppeteer in a Docker container.
-
-## Requirements
-
-- Docker version 20 or later
+Use Puppeteer in a Docker container with everything you need to create high-quality PDF screenshots.
 
 ## Retrieving the version of Chromium
 
-`docker run -it container_id chromium-browser --version`
+```sh
+docker build .
+docker run -it container_id chromium-browser --version
+```
