@@ -143,15 +143,17 @@ RUN apk add --no-cache \
   fontconfig \
   font-ipa \
   font-noto \
+  font-noto-cjk \
   font-noto-emoji \
   freetype \
   freetype-dev \
   gtk+3.0 \
   msttcorefonts-installer \
   nss \
+  ttf-dejavu \
+  ttf-droid \
   ttf-freefont \
-  unzip
-# If you don't need unzip, remove it, but it's probably there by default anyway
+  ttf-liberation
 
 # microsoft-true-font
 RUN update-ms-fonts
