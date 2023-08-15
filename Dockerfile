@@ -19,7 +19,7 @@
 # https://pptr.dev/chromium-support
 # https://pkgs.alpinelinux.org/packages?name=chromium&branch=edge&repo=&arch=x86_64
 #
-# ️🅰️ ️Web Fonts 🅰️
+# ️🅰️ Web Fonts 🅰️
 # Recommended for pixel-perfect PDFs. However, the fonts installed herein may be
 # redundant and some might be missing. Be skeptical.
 # https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
