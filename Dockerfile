@@ -2,7 +2,7 @@
 # This Dockerfile is for running Puppeteer under Alpine primarily for generating
 # PDF screenshots.
 #
-# 🐋 Dockerfiles 🐋
+# 🐋 Dockerfiles
 # This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker/blob/main/Dockerfile
 # https://github.com/Yelp/dumb-init
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
@@ -10,22 +10,22 @@
 # https://github.com/tkp1n/chromium-ci/blob/master/Dockerfile
 # https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile
 #
-# 🦄 Puppeteer 🦄
+# 🦄 Puppeteer
 # https://apitemplate.io/blog/tips-for-generating-pdfs-with-puppeteer/
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 # https://www.koyeb.com/tutorials/deploy-a-web-scraper-using-puppeteer-node-and-docker
 #
-# 🎨 Chromium Versions 🎨
+# 🎨 Chromium Versions
 # https://pptr.dev/chromium-support
 # https://pkgs.alpinelinux.org/packages?name=chromium&branch=edge&repo=&arch=x86_64
 #
-# ️🅰️ Web Fonts 🅰️
+# 🅰️ Web Fonts
 # Recommended for pixel-perfect PDFs. However, the fonts installed herein may be
 # redundant and some might be missing. Be skeptical.
 # https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
 # https://github.com/alpaca-tc/puppeteer-pdf-generator/blob/master/Dockerfile
 #
-# 🚥 Recommended Chromium Arguments 🚥
+# 🚥 Recommended Chromium Arguments
 # https://peter.sh/experiments/chromium-command-line-switches
 # https://simpleit.rocks/linux/ubuntu/fixing-common-google-chrome-gpu-process-error-message-in-linux
 # --autoplay-policy=user-gesture-required
@@ -71,7 +71,7 @@
 # --use-gl=swiftshader
 # --use-mock-keychain
 #
-# 🚥 More Chromium Arguments to Consider 🚥
+# 🚥 More Chromium Arguments to Consider
 # --disable-3d-apis
 # --disable-accelerated-2d-canvas 
 # --disable-accelerated-jpeg-decoding 
@@ -100,9 +100,6 @@
 # --renderer-process-limit=2 (to reduce memory usage which might reduce page
 #   crashes)
 # --single-process on AWS Fargate or Lambda - See https://github.com/puppeteer/puppeteer/issues/6776
-#
-# End of commentary
-################################################################################
 
 ARG REPO=node:20-alpine
 FROM $REPO
