@@ -11,4 +11,4 @@ npm-debug.log*
 Dockerfile
 LICENSE
 README.md
-node_modules
+node_modules/
