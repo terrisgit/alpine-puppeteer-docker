@@ -1,17 +1,19 @@
-################################################################################
-# This Dockerfile is for running Puppeteer under Alpine primarily for generating
-# PDF screenshots.
+# 👀 Overview
+#
+# This Dockerfile installs Puppeteer under Alpine with a large number of fonts for pixel-perfect
+# PDF generation. However, the fonts installed herein may be redundant and some might even be
+# missing. This Dockerfile is used in production but it might not be perfect for your needs.
 #
 # 🐋 Dockerfiles
-# This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker/blob/main/Dockerfile
+# This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker
 # https://github.com/Yelp/dumb-init
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
 # https://github.com/MontFerret/chromium 
-# https://github.com/tkp1n/chromium-ci/blob/master/Dockerfile
-# https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile
+# https://github.com/tkp1n/chromium-ci
+# https://github.com/Zenika/alpine-chrome
 #
 # 🦄 Puppeteer
-# https://apitemplate.io/blog/tips-for-generating-pdfs-with-puppeteer/
+# https://apitemplate.io/blog/tips-for-generating-pdfs-with-puppeteer
 # https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 # https://www.koyeb.com/tutorials/deploy-a-web-scraper-using-puppeteer-node-and-docker
 #
@@ -19,9 +21,7 @@
 # https://pptr.dev/chromium-support
 # https://pkgs.alpinelinux.org/packages?name=chromium&branch=edge&repo=&arch=x86_64
 #
-# 🅰️ Web Fonts
-# Recommended for pixel-perfect PDFs. However, the fonts installed herein may be
-# redundant and some might be missing. Be skeptical.
+# 🅰️ Fonts
 # https://unix.stackexchange.com/questions/438257/how-to-install-microsoft-true-type-font-on-alpine-linux
 # https://github.com/alpaca-tc/puppeteer-pdf-generator/blob/master/Dockerfile
 #
@@ -72,6 +72,7 @@
 # --use-mock-keychain
 #
 # 🚥 More Chromium Arguments to Consider
+# --single-process on AWS Fargate or Lambda - See https://github.com/puppeteer/puppeteer/issues/6776
 # --disable-3d-apis
 # --disable-accelerated-2d-canvas 
 # --disable-accelerated-jpeg-decoding 
@@ -97,16 +98,14 @@
 # --log-level=3 
 # --no-experiments 
 # --remote-debugging-port=0 
-# --renderer-process-limit=2 (to reduce memory usage which might reduce page
-#   crashes)
-# --single-process on AWS Fargate or Lambda - See https://github.com/puppeteer/puppeteer/issues/6776
+# --renderer-process-limit=2 (to reduce memory usage which might reduce page crashes)
 
 ARG REPO=node:20-alpine
 FROM $REPO
 
 ARG CHROMIUM=chromium@edge=116.0.5845.110-r0
 
-################################################################################
+################################################################
 # Environment variables
 #
 ENV FONT_DIR=/usr/share/fonts
@@ -123,7 +122,7 @@ ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 # ENV DEBUG=puppeteer:*
 ENV DEBUG_COLORS=true
 #
-################################################################################
+################################################################
 
 RUN apk update
 RUN apk upgrade --no-cache
