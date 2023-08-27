@@ -1,0 +1,13 @@
+.aws
+.git
+.github
+.vscode
+.chromium
+.DS_Store
+.eslintcache
+.node_repl_history
+npm-debug.log*
+
+Dockerfile
+README.md
+node_modules
