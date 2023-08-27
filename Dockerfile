@@ -104,7 +104,7 @@
 ARG REPO=node:20-alpine
 FROM $REPO
 
-ARG CHROMIUM=chromium@edge=115.0.5790.110-r2
+ARG CHROMIUM=chromium@edge=116.0.5845.110-r0
 
 ################################################################################
 # Environment variables
@@ -121,7 +121,7 @@ ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
 #
 # Puppeteer debugging
 # ENV DEBUG=puppeteer:*
-# ENV DEBUG_COLORS=true
+ENV DEBUG_COLORS=true
 #
 ################################################################################
 
