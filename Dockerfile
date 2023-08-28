@@ -103,7 +103,7 @@
 ARG REPO=node:20-alpine
 FROM $REPO
 
-ARG CHROMIUM=chromium@edge=116.0.5845.110-r0
+ARG CHROMIUM=116.0.5845.110-r0
 
 ################################################################
 # Environment variables
@@ -132,7 +132,8 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
 
 RUN apk add --no-cache \
   ca-certificates \
-  $CHROMIUM \
+  chromium@edge=$CHROMIUM \
+  curl \
   dumb-init \
   chromium \
   harfbuzz \
@@ -155,8 +156,7 @@ RUN apk add --no-cache \
 RUN update-ms-fonts
 
 # Google fonts
-RUN mkdir -p /tmp/google-fonts \
-  && wget https://github.com/google/fonts/archive/master.tar.gz -O /tmp/google-fonts/fonts.tar.gz \
+RUN curl -L https://github.com/google/fonts/archive/refs/heads/main.tar.gz --create-dirs --output /tmp/google-fonts/fonts.tar.gz \
   && cd /tmp/google-fonts \
   && tar -xf fonts.tar.gz \
   && mkdir -p $FONT_DIR/truetype/google-fonts \
