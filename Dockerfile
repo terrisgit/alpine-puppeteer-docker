@@ -1,11 +1,10 @@
 # 👀 Overview
-#
 # This Dockerfile installs Puppeteer under Alpine with a large number of fonts for pixel-perfect
 # PDF generation. However, the fonts installed herein may be redundant and some might even be
 # missing. This Dockerfile is used in production but it might not be perfect for your needs.
 #
 # 🐋 Dockerfiles
-# This Dockerfile: https://github.com/terrisgit/alpine-puppeteer-docker
+# This Dockerfile's home: https://github.com/terrisgit/alpine-puppeteer-docker
 # https://github.com/Yelp/dumb-init
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
 # https://github.com/MontFerret/chromium 
