@@ -5,6 +5,7 @@
 #
 # 🐋 Dockerfiles
 # This Dockerfile's home: https://github.com/terrisgit/alpine-puppeteer-docker
+# Other Dockerfiles used for reference:
 # https://github.com/Yelp/dumb-init
 # https://stackoverflow.com/questions/66512149/headless-chromium-in-ubuntu-docker-container
 # https://github.com/MontFerret/chromium 
@@ -13,7 +14,6 @@
 #
 # 🦄 Puppeteer
 # https://apitemplate.io/blog/tips-for-generating-pdfs-with-puppeteer
-# https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md
 # https://www.koyeb.com/tutorials/deploy-a-web-scraper-using-puppeteer-node-and-docker
 #
 # 🎨 Chromium Versions
