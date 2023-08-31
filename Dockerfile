@@ -103,7 +103,7 @@
 ARG REPO=node:20-alpine
 FROM $REPO
 
-ARG CHROMIUM=116.0.5845.110-r0
+ARG CHROMIUM=116.0.5845.140-r0
 
 ################################################################
 # Environment variables
